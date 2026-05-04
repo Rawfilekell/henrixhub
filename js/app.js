@@ -126,7 +126,6 @@ function prodCard(p) {
   const badgeBg = p.badge === 'New' ? 'background:var(--dark)' : 'background:var(--red)';
   return `
   <div class="prod-card" onclick="openDetail(${p.id})">
-    ${p.badge ? `<div class="prod-badge" style="${badgeBg}">${p.badge}</div>` : ''}
     <div class="prod-img">
       <img
         src="${p.imgs[0]}"
@@ -135,14 +134,10 @@ function prodCard(p) {
         onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=font-size:4rem>📱</span>'">
     </div>
     <div class="prod-info">
-      <div class="prod-brand">${p.brand}</div>
       <div class="prod-name">${p.name}</div>
       <div class="prod-price">
         ${fmt(p.price)}
-        ${p.old ? `<span class="prod-old">${fmt(p.old)}</span>` : ''}
       </div>
-      <div class="prod-cond">${p.cond} · ${p.year}</div>
-      <div class="prod-rating">${starsHTML(p.rating)} ${p.rating} (${p.reviews})</div>
       <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>
     </div>
   </div>`;
