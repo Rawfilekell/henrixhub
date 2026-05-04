@@ -287,11 +287,13 @@ nav {
   grid-template-columns: 38fr 62fr;
 }
 
+
+
 .hero-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 12% 2px;
+  padding: 1.5rem 0.5rem 6%;
 }
 
 .hero-eyebrow {
@@ -2390,6 +2392,38 @@ footer {
   .promo-strip {
     margin: 2rem 3%;
   }
+
+  .hero-left {
+  padding: 1rem 0.5rem 1rem 4%;
+}
+
+.hero-cta {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.btn-shop {
+  padding: 0.55rem 1rem;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.btn-link {
+  font-size: 0.68rem;
+}
+
+.hero-sub {
+  font-size: 0.65rem;
+  line-height: 1.5;
+  margin: 6px 0 !important;
+}
+
+.hero h1 {
+  font-size: clamp(1rem, 5vw, 1.4rem);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
 }
 
 @media (max-width: 430px) {
