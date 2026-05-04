@@ -2457,15 +2457,10 @@ footer {
 
 
 @media (max-width: 430px) {
-  .hero {
-    padding: 1.5rem 4% 0;
-    /* 👈 no bottom padding */
-  }
 
 
-  .hero-inner {
-    grid-template-columns: 1fr 2fr;
-  }
+
+ 
 
 
 
@@ -2507,7 +2502,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0 15px 0;
+    padding: 1rem 0;
   }
 }
 
@@ -2817,8 +2812,8 @@ footer {
   }
 
   .hero-inner {
-    gap: 0.5rem;
-    padding: 3.5rem 0 1.5rem !important;
+   
+    padding: 1rem 0 0;
   }
 
   .hero-right {
