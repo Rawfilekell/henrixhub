@@ -276,7 +276,6 @@ nav {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-radius: 45px;
   margin-top: 3px;
 }
 
@@ -423,7 +422,7 @@ nav {
 
 /* Hero right image panel */
 .hero-right {
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   min-height: 420px;
 }
@@ -2401,12 +2400,66 @@ footer {
     margin: 2rem 3%;
   }
 
+
+  .hero-inner {
+    flex-direction: row; /* keep side-by-side */
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+.hero-left {
+  padding: 0.6rem 0.8rem;
 }
 
-@media (max-width: 430px) {
-  .hero {
-    padding: 0 4%;
+.hero h1 {
+  margin-bottom: 0.4rem;
+}
+
+.hero-sub {
+  margin-bottom: 0.5rem;
+  line-height: 1.45;
+}
+
+  /* CTA (don’t break global button styles) */
+  .hero-cta {
+    margin-top: 0.6rem;
   }
+
+  .hero-cta .btn-shop {
+    padding: 0.5rem 0.8rem; /* scoped only inside hero */
+    font-size: 0.75rem;
+  }
+
+  .hero-cta .btn-link {
+    display: none;
+  }
+
+  /* remove clutter */
+  .hero-stats {
+    display: none;
+  }
+
+  /* IMAGE SIDE */
+  .hero-right {
+    flex: 1.3; /* image more dominant */
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-right img {
+    width: 100%;
+    max-width: 240px;
+    height: auto; /* fix stretch */
+    object-fit: contain;
+  }
+}
+
+
+@media (max-width: 430px) {
+ .hero {
+  padding: 1.5rem 4% 0; /* 👈 no bottom padding */
+}
+
 
   .hero-inner {
     grid-template-columns: 1fr 2fr;
@@ -2453,7 +2506,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
+    padding: 0 0 15px 0;
   }
 }
 
@@ -2513,7 +2566,7 @@ footer {
 
 /* Hero right image: always visible */
 .hero-right {
-  min-height: 280px;
+  min-height: unset;
 }
 
 .hero-phone,
@@ -2521,6 +2574,7 @@ footer {
   max-height: 70vh;
   width: 100%;
   object-fit: contain;
+  
 }
 
 
@@ -2632,15 +2686,13 @@ footer {
 
   /* Hero: maintain 2 columns even on mobile — just scale things down */
   .hero-inner {
-    grid-template-columns: 1fr 2fr !important;
-    gap: 1rem;
+    grid-template-columns: 1fr 1.8fr !important;
     align-items: center;
   }
 
   .hero h1 {
     font-size: clamp(1.1rem, 5vw, 1.6rem);
     letter-spacing: -0.5px;
-    margin-bottom: 0.7rem;
   }
 
   .hero-sub {
