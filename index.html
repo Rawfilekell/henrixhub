@@ -5,20 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HenrixHub — We Fulfil Your Mobile Dreams</title>
-
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <header class="header">
-    <nav class="nav">
-      <div class="logo" onclick="goPage('home')">
-        Henrix<span>Hub</span>
-      </div>
 
+
+  <header class="header">
+    <nav>
+      <div class="logo" onclick="goPage('home')">Henrix<span>Hub</span></div>
       <ul class="nav-links">
         <li><a onclick="goPage('home')">Home</a></li>
         <li><a onclick="goPage('shop')">Shop</a></li>
@@ -27,21 +25,16 @@
       </ul>
 
       <div class="nav-right">
-        <button class="cart-btn" onclick="toggleCart()">
-          🛒 <span id="cartCount">0</span>
-        </button>
+        <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cartCount">0</span></button>
         <button class="mob-btn" onclick="toggleMob()">☰</button>
       </div>
     </nav>
 
-    <!-- SEARCH -->
     <div class="top-search">
       <input type="text" placeholder="🔍 Search for brand">
     </div>
-
   </header>
 
-  <!-- ================= MOBILE NAV ================= -->
   <div class="mob-nav" id="mobNav">
     <a onclick="goPage('home');toggleMob()">Home</a>
     <a onclick="goPage('shop');toggleMob()">Shop</a>
@@ -49,16 +42,14 @@
     <a onclick="goPage('contact');toggleMob()">Contact</a>
   </div>
 
+
   <div class="page active" id="page-home">
     <section class="hero">
-      <div class="hero-grid-bg"></div>
       <div class="hero-inner">
-
         <div class="hero-left">
           <h1>We Fulfil Your<br><em>Mobile Dreams.</em></h1>
-          <p class="hero-sub">
-            Authentic iPhones, MacBooks and premium tech. Sourced directly, shipped worldwide, no compromises
-          </p>
+          <p class="hero-sub">Authentic iPhones, MacBooks and premium tech. Sourced directly, shipped worldwide, no
+            compromises.</p>
 
           <div class="hero-cta">
             <button class="btn-shop">
@@ -69,11 +60,7 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </button>
-            <button class="btn-link">Contact Us <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg></button>
+            <button class="btn-link">Contact Us</button>
           </div>
 
           <div class="hero-stats">
@@ -91,18 +78,12 @@
             </div>
           </div>
         </div>
+
         <div class="hero-right">
-          <img src="./assets/b11ac771fb162e18df6d616a533adbc3-removebg-preview.png" alt="">
-
+          <img src="./assets/b11ac771fb162e18df6d616a533adbc3-removebg-preview.png" alt="Featured Phone">
         </div>
-
-
-
       </div>
     </section>
-
-
-
 
     <!-- Categories -->
     <section class="section">
@@ -130,7 +111,7 @@
       </div>
     </div>
 
-    <!-- Featured Products -->
+
     <section class="section section-alt">
       <div class="section-hd">
         <div>
@@ -142,7 +123,7 @@
       <div class="prod-grid" id="featuredGrid"></div>
     </section>
 
-    <!-- Promo Strip -->
+
     <div class="promo-strip">
       <div class="pc">
         <div class="pc-ic">🚚</div>
@@ -167,7 +148,7 @@
       </div>
     </div>
 
-    <!-- Why HenrixHub -->
+
     <section class="section">
       <div class="section-hd">
         <div>
@@ -199,7 +180,7 @@
       </div>
     </section>
 
-    <!-- Newsletter -->
+
     <section class="newsletter">
       <h2>Be First for <span style="color:var(--red)">New Arrivals & Deals</span></h2>
       <p>Join thousands of tech lovers who get HenrixHub drops straight to their inbox.</p>
@@ -211,12 +192,10 @@
 
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════
-     SHOP PAGE
-══════════════════════════════════════════════════════════ -->
   <div class="page" id="page-shop">
     <div class="shop-wrap">
 
+      <!-- Sidebar Filters -->
       <aside class="filters">
         <div class="f-title">Filters</div>
 
@@ -250,13 +229,16 @@
         <button class="f-btn ghost" onclick="resetFilters()">Reset All</button>
       </aside>
 
+      <!-- Product Area -->
       <div class="shop-main">
         <div class="shop-search-bar">
           <input type="text" id="shopSearch" placeholder="Search iPhones, MacBooks, accessories…"
             oninput="applyFilters()">
           <button onclick="applyFilters()">Search</button>
         </div>
+
         <div class="pills" id="shopPills"></div>
+
         <div class="shop-top">
           <div class="shop-count" id="shopCount">All products</div>
           <select class="shop-sort" id="shopSort" onchange="applyFilters()">
@@ -268,23 +250,17 @@
             <option value="newest">Newest First</option>
           </select>
         </div>
+
         <div class="prod-grid" id="shopGrid"></div>
       </div>
 
     </div>
-  </div><!-- /page-shop -->
-
-  <!-- ══════════════════════════════════════════════════════════
-     PRODUCT DETAIL PAGE
-══════════════════════════════════════════════════════════ -->
+  </div>
   <div class="page" id="page-detail">
     <div class="back-btn" onclick="goBack()">← Back</div>
     <div class="detail-wrap" id="detailContent"></div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════
-     ABOUT PAGE
-══════════════════════════════════════════════════════════ -->
   <div class="page" id="page-about">
     <div class="about-wrap">
 
@@ -309,15 +285,18 @@
         </div>
       </div>
       <div class="about-vals">
-        <div class="vc"><span class="vc-ic">🎯</span>
+        <div class="vc">
+          <span class="vc-ic">🎯</span>
           <div class="vc-t">Customer First</div>
           <div class="vc-d">Every decision starts with what's best for you. Satisfaction is our only metric.</div>
         </div>
-        <div class="vc"><span class="vc-ic">🔒</span>
+        <div class="vc">
+          <span class="vc-ic">🔒</span>
           <div class="vc-t">Always Authentic</div>
           <div class="vc-d">Zero counterfeits. Zero compromises. Just genuine products you can trust.</div>
         </div>
-        <div class="vc"><span class="vc-ic">🌍</span>
+        <div class="vc">
+          <span class="vc-ic">🌍</span>
           <div class="vc-t">Global Reach</div>
           <div class="vc-d">Lagos to London, Abuja to Atlanta — we ship worldwide.</div>
         </div>
@@ -354,6 +333,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
     <section class="newsletter">
@@ -364,16 +344,16 @@
         <button>Subscribe</button>
       </div>
     </section>
-  </div><!-- /page-about -->
 
-  <!-- ══════════════════════════════════════════════════════════
-     CONTACT PAGE
-══════════════════════════════════════════════════════════ -->
+  </div>
+
   <div class="page" id="page-contact">
     <div class="contact-wrap">
       <div class="a-tag">Get In Touch</div>
+
       <div class="contact-grid">
 
+        <!-- Contact Info -->
         <div class="ci-blk">
           <h2>Reach Us on <span>Any Platform</span></h2>
           <p>Looking for a specific model? Need a bulk order? Have a question? We're on WhatsApp, Instagram and TikTok —
@@ -404,9 +384,7 @@
             <div class="cinfo-ic">🕐</div>
             <div>
               <div class="cinfo-lbl">Hours</div>
-              <div class="cinfo-val">Walk-In-Store: Mon–Sat: 10am – 6pm
-                Online 24/7
-              </div>
+              <div class="cinfo-val">Walk-In Store: Mon–Sat 10am – 6pm<br>Online: 24/7</div>
             </div>
           </div>
 
@@ -419,6 +397,7 @@
               TikTok</button>
           </div>
         </div>
+
 
         <div class="cf">
           <h3>Send a Message</h3>
@@ -445,13 +424,12 @@
 
       </div>
     </div>
-  </div><!-- /page-contact -->
+  </div>
 
-  <!-- ══════════════════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════════════════ -->
+
   <footer id="siteFooter">
     <div class="ft-grid">
+
       <div>
         <span class="ft-logo" onclick="goPage('home')">Henrix<span>Hub</span></span>
         <p class="ft-desc">We fulfil your mobile dreams. Authentic iPhones and premium tech — verified, sourced
@@ -493,8 +471,8 @@
         <div class="fci"><span class="fci-ic">📞</span>+234 818 272 7991</div>
         <div class="fci"><span class="fci-ic">✉️</span>henrixhub@gmail.com</div>
       </div>
-    </div>
 
+    </div>
   </footer>
 
   <div class="ticker">
@@ -506,7 +484,7 @@
       <span>📸 Follow on Instagram</span>
       <span>🎵 Find Us on TikTok</span>
       <span>🔁 14-Day Return Policy</span>
-      <!-- repeat for seamless loop -->
+      <!-- duplicate for seamless loop -->
       <span>📦 Worldwide Shipping</span>
       <span>✅ 100% Genuine Products</span>
       <span>📱 All iPhone Series In Stock</span>
@@ -516,7 +494,6 @@
       <span>🔁 14-Day Return Policy</span>
     </div>
   </div>
-
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
