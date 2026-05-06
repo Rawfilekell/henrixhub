@@ -237,7 +237,8 @@ nav {
 }
 .hero h1 em {
   color: var(--red);
-  font-style: normal;
+  font-style: oblique;
+  font-family: initial;
 }
 
 .hero-sub {
