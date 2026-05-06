@@ -35,7 +35,7 @@ function goPage(page) {
     // Show back arrow on all pages except home
   const mobBack = $('mobBack');
   if (mobBack) mobBack.style.display = page === 'home' ? 'none' : 'block';
-  
+
   ['home', 'shop', 'about', 'contact'].forEach(p => {
     const l = $('nl-' + p);
     if (l) l.classList.toggle('active', p === page);
@@ -128,7 +128,7 @@ function orderWA() {
   const lines = cart.map(i => `• ${i.name} x${i.qty} — ${fmt(i.price * i.qty)}`).join('%0A');
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const msg = `Hello HenrixHub! 👋%0A%0AI'd like to order:%0A%0A${lines}%0A%0ATotal: ${fmt(total)}%0A%0APlease confirm availability. Thank you!`;
-  window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
+  window.open(`https://wa.me/2348182727991?text=${msg}`, '_blank');
 }
 
 /* ── PRODUCT CARD ── */
