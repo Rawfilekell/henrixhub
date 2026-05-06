@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HenrixHub — We Fulfil Your Mobile Dreams</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Kavivanar:wght@300;400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-
   <header class="header">
     <nav>
+
+        <button class="mob-back" id="mobBack" onclick="goBack()" style="display:none">←</button>
+      
       <div class="logo" onclick="goPage('home')">Henrix<span>Hub</span></div>
       <ul class="nav-links">
         <li><a onclick="goPage('home')">Home</a></li>
@@ -426,7 +427,6 @@
     </div>
   </div>
 
-
   <footer id="siteFooter">
     <div class="ft-grid">
 
@@ -494,6 +494,30 @@
       <span>🔁 14-Day Return Policy</span>
     </div>
   </div>
+
+
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+
+  <div class="drawer" id="drawer">
+    <div class="d-head">
+      <h3>🛒 Your Cart <span id="cartQtyLabel" style="color:var(--red)"></span></h3>
+      <button class="close-d" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="d-items" id="cartItems">
+      <div class="d-empty"><span>🛒</span>Your cart is empty</div>
+    </div>
+    <div class="d-foot">
+      <div class="d-total">
+        <span>Total</span>
+        <strong id="cartTotal">₦0</strong>
+      </div>
+      <button class="wa-order" onclick="orderWA()">💬 Order via WhatsApp</button>
+      <button class="clear-c" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>

@@ -1,16 +1,20 @@
 /* ============================================================
    HenrixHub — App Logic
    ============================================================ */
+// Push a history entry whenever we navigate
+function pushHistory(page) {
+  history.pushState({ page }, '', '#' + page);
+}
 
 /* ── STATE ── */
-let cart     = JSON.parse(localStorage.getItem('hxCart4') || '[]');
+let cart = JSON.parse(localStorage.getItem('hxCart4') || '[]');
 let activeCat = 'All';
-let prevPage  = 'home';
-let curPage   = 'home';
+let prevPage = 'home';
+let curPage = 'home';
 
 /* ── UTILS ── */
-const $   = id  => document.getElementById(id);
-const fmt = n   => '₦' + Number(n).toLocaleString('en-NG');
+const $ = id => document.getElementById(id);
+const fmt = n => '₦' + Number(n).toLocaleString('en-NG');
 const starsHTML = r => `<span class="stars">${r >= 4.8 ? '★★★★★' : '★★★★☆'}</span>`;
 
 function toast(msg) {
@@ -26,7 +30,13 @@ function goPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   $('page-' + page).classList.add('active');
   curPage = page;
-  ['home','shop','about','contact'].forEach(p => {
+  pushHistory(page);
+
+    // Show back arrow on all pages except home
+  const mobBack = $('mobBack');
+  if (mobBack) mobBack.style.display = page === 'home' ? 'none' : 'block';
+  
+  ['home', 'shop', 'about', 'contact'].forEach(p => {
     const l = $('nl-' + p);
     if (l) l.classList.toggle('active', p === page);
   });
@@ -35,9 +45,9 @@ function goPage(page) {
   if (page === 'shop') renderShop();
 }
 
-function goBack()        { goPage(prevPage === 'detail' ? 'shop' : prevPage); }
-function goShopCat(cat)  { activeCat = cat; goPage('shop'); }
-function toggleMob()     { $('mobNav').classList.toggle('open'); }
+function goBack() { goPage(prevPage === 'detail' ? 'shop' : prevPage); }
+function goShopCat(cat) { activeCat = cat; goPage('shop'); }
+function toggleMob() { $('mobNav').classList.toggle('open'); }
 
 function navSearchGo(e) {
   if (e.key === 'Enter') {
@@ -55,7 +65,7 @@ function saveCart() { localStorage.setItem('hxCart4', JSON.stringify(cart)); }
 
 function updateCartUI() {
   const count = cart.reduce((s, i) => s + i.qty, 0);
-  $('cartCount').textContent    = count;
+  $('cartCount').textContent = count;
   $('cartQtyLabel').textContent = count;
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   $('cartTotal').textContent = fmt(total);
@@ -85,7 +95,7 @@ function updateCartUI() {
 }
 
 function addToCart(id) {
-  const p  = PRODUCTS.find(x => x.id === id);
+  const p = PRODUCTS.find(x => x.id === id);
   const ex = cart.find(x => x.id === id);
   if (ex) {
     ex.qty++;
@@ -106,7 +116,7 @@ function chgQty(id, d) {
   updateCartUI();
 }
 
-function rmCart(id)  { cart = cart.filter(x => x.id !== id); saveCart(); updateCartUI(); }
+function rmCart(id) { cart = cart.filter(x => x.id !== id); saveCart(); updateCartUI(); }
 function clearCart() { cart = []; saveCart(); updateCartUI(); }
 function toggleCart() {
   $('drawer').classList.toggle('open');
@@ -154,7 +164,7 @@ function renderHome() {
 
   // Featured — 8 iPhones first, then fill with others
   const iPhones = PRODUCTS.filter(p => p.cat === 'iPhones').slice(0, 6);
-  const others  = PRODUCTS.filter(p => p.cat !== 'iPhones').slice(0, 2);
+  const others = PRODUCTS.filter(p => p.cat !== 'iPhones').slice(0, 2);
   $('featuredGrid').innerHTML = [...iPhones, ...others].map(prodCard).join('');
 }
 
@@ -194,9 +204,9 @@ function applyFilters() {
   // Search
   const q = ($('shopSearch')?.value || '').toLowerCase().trim();
   if (q) list = list.filter(p =>
-    p.name.toLowerCase().includes(q)  ||
+    p.name.toLowerCase().includes(q) ||
     p.brand.toLowerCase().includes(q) ||
-    p.cat.toLowerCase().includes(q)   ||
+    p.cat.toLowerCase().includes(q) ||
     (p.model && p.model.toLowerCase().includes(q))
   );
 
@@ -219,11 +229,11 @@ function applyFilters() {
 
   // Sort
   const sort = $('shopSort')?.value || 'default';
-  if      (sort === 'price-asc')  list.sort((a, b) => a.price - b.price);
+  if (sort === 'price-asc') list.sort((a, b) => a.price - b.price);
   else if (sort === 'price-desc') list.sort((a, b) => b.price - a.price);
-  else if (sort === 'name-az')    list.sort((a, b) => a.name.localeCompare(b.name));
-  else if (sort === 'rating')     list.sort((a, b) => b.rating - a.rating);
-  else if (sort === 'newest')     list.sort((a, b) => b.year - a.year);
+  else if (sort === 'name-az') list.sort((a, b) => a.name.localeCompare(b.name));
+  else if (sort === 'rating') list.sort((a, b) => b.rating - a.rating);
+  else if (sort === 'newest') list.sort((a, b) => b.year - a.year);
 
   $('shopCount').textContent = `Showing ${list.length} product${list.length !== 1 ? 's' : ''}`;
   $('shopGrid').innerHTML = list.length
@@ -239,8 +249,8 @@ function applyFilters() {
 function resetFilters() {
   activeCat = 'All';
   if ($('shopSearch')) $('shopSearch').value = '';
-  if ($('priceMin'))   $('priceMin').value   = '';
-  if ($('priceMax'))   $('priceMax').value   = '';
+  if ($('priceMin')) $('priceMin').value = '';
+  if ($('priceMax')) $('priceMax').value = '';
   document.querySelectorAll('.filters input[type=checkbox]').forEach(c => c.checked = false);
   document.querySelectorAll('.filters input[type=radio][value="All"]').forEach(r => r.checked = true);
   if ($('shopSort')) $('shopSort').value = 'default';
@@ -250,9 +260,9 @@ function resetFilters() {
 /* ── PRODUCT DETAIL ── */
 function openDetail(id) {
   prevPage = curPage;
-  const p       = PRODUCTS.find(x => x.id === id);
+  const p = PRODUCTS.find(x => x.id === id);
   const related = PRODUCTS.filter(x => x.cat === p.cat && x.id !== id).slice(0, 4);
-  const condBg  = p.cond === 'New' ? 'var(--dark)' : 'var(--red)';
+  const condBg = p.cond === 'New' ? 'var(--dark)' : 'var(--red)';
 
   $('detailContent').innerHTML = `
     <div>
@@ -263,7 +273,7 @@ function openDetail(id) {
       <div class="d-thumbs">
         ${p.imgs.map((img, i) => `
           <div class="thumb ${i === 0 ? 'active-t' : ''}" onclick="switchImg('${img}', this)">
-            <img src="${img}" alt="${p.name} view ${i+1}" onerror="this.style.display='none'">
+            <img src="${img}" alt="${p.name} view ${i + 1}" onerror="this.style.display='none'">
           </div>`).join('')}
       </div>
     </div>
@@ -333,7 +343,7 @@ function chgDQ(d) {
 }
 
 function waDirect(id) {
-  const p   = PRODUCTS.find(x => x.id === id);
+  const p = PRODUCTS.find(x => x.id === id);
   const qty = parseInt($('dQty')?.value || 1);
   const msg = `Hello HenrixHub! 👋%0A%0AI want to order:%0A%0A*${p.name}* (${p.cond}, ${p.year})%0AQty: ${qty}%0APrice: ${fmt(p.price)}%0A%0APlease confirm availability. Thank you!`;
   window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
@@ -347,7 +357,7 @@ function tick() {
   const h = Math.floor(d / 3600); d %= 3600;
   const m = Math.floor(d / 60);
   const s = d % 60;
-  if ($('hrs'))  $('hrs').textContent  = String(h).padStart(2, '0');
+  if ($('hrs')) $('hrs').textContent = String(h).padStart(2, '0');
   if ($('mins')) $('mins').textContent = String(m).padStart(2, '0');
   if ($('secs')) $('secs').textContent = String(s).padStart(2, '0');
 }
@@ -374,3 +384,17 @@ function subNL() {
 /* ── INIT ── */
 renderHome();
 updateCartUI();
+
+// Handle browser back/forward button
+window.addEventListener('popstate', e => {
+  const page = e.state?.page || 'home';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  $('page-' + page).classList.add('active');
+  curPage = page;
+  $('siteFooter').style.display = page === 'detail' ? 'none' : 'block';
+  if (page === 'shop') renderShop();
+  window.scrollTo(0, 0);
+});
+
+// Set initial history state
+history.replaceState({ page: 'home' }, '', '#home');
