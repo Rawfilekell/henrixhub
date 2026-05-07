@@ -349,7 +349,7 @@ function waDirect(id) {
   const p = PRODUCTS.find(x => x.id === id);
   const qty = parseInt($('dQty')?.value || 1);
   const msg = `Hello HenrixHub! 👋%0A%0AI want to order:%0A%0A*${p.name}* (${p.cond}, ${p.year})%0AQty: ${qty}%0APrice: ${fmt(p.price)}%0A%0APlease confirm availability. Thank you!`;
-  window.open(`https://wa.me/2348000000000?text=${msg}`, '_blank');
+  window.open(`https://wa.me/2348182727991?text=${msg}`, '_blank');
 }
 
 /* ── COUNTDOWN ── */
