@@ -156,9 +156,11 @@ nav {
   flex-direction: column;
   gap: .3rem;
   box-shadow: var(--shadow);
+  margin-top: 10px;
  
 }
 .mob-nav.open { display: flex; }
+
 .mob-nav a {
   font-size: .9rem;
   font-weight: 600;
@@ -166,7 +168,6 @@ nav {
   padding: .6rem 0;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
-  margin-top: 12px;
 }
 
 .mob-nav a:hover { color: var(--red); }

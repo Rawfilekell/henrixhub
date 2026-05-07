@@ -1,6 +1,4 @@
-/* ============================================================
-   HenrixHub — App Logic
-   ============================================================ */
+
 // Push a history entry whenever we navigate
 function pushHistory(page) {
   history.pushState({ page }, '', '#' + page);
