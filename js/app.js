@@ -32,7 +32,7 @@ function goPage(page) {
   curPage = page;
   pushHistory(page);
 
-    // Show back arrow on all pages except home
+  // Show back arrow on all pages except home
   const mobBack = $('mobBack');
   if (mobBack) mobBack.style.display = page === 'home' ? 'none' : 'block';
 
@@ -47,7 +47,12 @@ function goPage(page) {
 
 function goBack() { goPage(prevPage === 'detail' ? 'shop' : prevPage); }
 function goShopCat(cat) { activeCat = cat; goPage('shop'); }
-function toggleMob() { $('mobNav').classList.toggle('open'); }
+function toggleMob() {
+  const nav = $('mobNav');
+  const btn = $('mobBtn');
+  const isOpen = nav.classList.toggle('open');
+  btn.textContent = isOpen ? '✕' : '☰';
+}
 
 function navSearchGo(e) {
   if (e.key === 'Enter') {
