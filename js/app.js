@@ -371,9 +371,30 @@ tick();
 
 /* ── FORMS ── */
 function submitForm() {
+  // grab all the field values
+  const firstName = document.querySelector('.cf input[placeholder="John"]').value.trim();
+  const lastName = document.querySelector('.cf input[placeholder="Doe"]').value.trim();
+  const email = document.querySelector('.cf input[placeholder="john@example.com"]').value.trim();
+  const phone = document.querySelector('.cf input[placeholder="+234 800 000 0000"]').value.trim();
+  const subject = document.querySelector('.cf select').value;
+  const message = document.querySelector('.cf textarea').value.trim();
+
+  // basic validation
+  if (!firstName || !message) {
+    toast('⚠️ Please fill in your name and message.');
+    return;
+  }
+
+  // build whatsapp message
+  const wa = `Hello HenrixHub! 👋%0A%0A*New Contact Form Message*%0A%0A*Name:* ${firstName} ${lastName}%0A*Email:* ${email || 'Not provided'}%0A*Phone:* ${phone || 'Not provided'}%0A*Subject:* ${subject}%0A%0A*Message:*%0A${message}`;
+
+  // open whatsapp
+  window.open(`https://wa.me/2348182727991?text=${wa}`, '_blank');
+
+  // show success
   $('formOk').style.display = 'block';
   setTimeout(() => $('formOk').style.display = 'none', 5000);
-  toast('✅ Message sent!');
+  toast('✅ Opening WhatsApp...');
 }
 
 function subNL() {

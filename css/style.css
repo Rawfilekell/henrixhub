@@ -166,6 +166,7 @@ nav {
   padding: .6rem 0;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
+  margin-top: 10px;
 }
 .mob-nav a:hover { color: var(--red); }
 
