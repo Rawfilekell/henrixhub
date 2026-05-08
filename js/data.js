@@ -1,11 +1,9 @@
 /* ============================================================
    HenrixHub — Product Data
-   Real product images from publicly accessible CDNs
    ============================================================ */
 
-// Apple Store CDN — official product renders with transparent backgrounds
 const IMG = {
-  // iPhones — Apple Store CDN (these load correctly in browsers)
+  // iPhones
   ip16pm_bt:  'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-9inch-blacktitanium?wid=800&hei=800&fmt=p-jpg&qlt=95&.v=1725388369680',
   ip16pm_dt:  'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-9inch-deserttitanium?wid=800&hei=800&fmt=p-jpg&qlt=95&.v=1724927879412',
   ip16p_bt:   'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=800&hei=800&fmt=p-jpg&qlt=95&.v=1725388369680',
@@ -37,12 +35,21 @@ const IMG = {
   watch10:    'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWWQ3ref_VW_34FR+watch-case-46-aluminum-jetblack-nc-s10_VW_34FR_WF_CO?wid=800&hei=800&fmt=p-jpg&qlt=95',
   // PlayStation
   ps5:        'https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$',
+  // Samsung
+  s25u:       'https://images.samsung.com/is/image/samsung/p6pim/levant/2501/gallery/levant-galaxy-s25-ultra-s938-sm-s938bzadeub-thumb-542380949',
+  s25p:       'https://images.samsung.com/is/image/samsung/p6pim/levant/2501/gallery/levant-galaxy-s25-s931-sm-s931bzadeub-thumb-542380949',
+  s25:        'https://images.samsung.com/is/image/samsung/p6pim/levant/2501/gallery/levant-galaxy-s25-s931-sm-s931bzadeub-thumb-542380949',
+  zfold6:     'https://images.samsung.com/is/image/samsung/p6pim/levant/2407/gallery/levant-galaxy-z-fold6-f956-sm-f956bzageub-thumb-542098695',
+  zflip6:     'https://images.samsung.com/is/image/samsung/p6pim/levant/2407/gallery/levant-galaxy-z-flip6-f741-sm-f741bzkgeub-thumb-542098695',
+  a55:        'https://images.samsung.com/is/image/samsung/p6pim/levant/2403/gallery/levant-galaxy-a55-a556-sm-a556ezageub-thumb-539603663',
+  a35:        'https://images.samsung.com/is/image/samsung/p6pim/levant/2403/gallery/levant-galaxy-a35-a356-sm-a356ezageub-thumb-539603663',
+  a16:        'https://images.samsung.com/is/image/samsung/p6pim/levant/2410/gallery/levant-galaxy-a16-a166-sm-a166fzkdeub-thumb-542380949',
 };
 
 const PRODUCTS = [
-  // ── iPHONES ──────────────────────────────────────────────
+  // ── APPLE iPHONES ────────────────────────────────────────
   {
-    id: 1, name: 'iPhone 16 Pro Max', brand: 'Apple', cat: 'iPhones', model: 'iPhone 16',
+    id: 1, name: 'iPhone 16 Pro Max', brand: 'Apple', cat: 'Phones', model: 'iPhone 16',
     cond: 'New', rating: 4.9, reviews: 567, badge: 'New', year: 2024,
     price: 2350000, old: 2500000,
     imgs: [IMG.ip16pm_bt, IMG.ip16pm_dt],
@@ -50,7 +57,7 @@ const PRODUCTS = [
     specs: [['Storage','256GB / 512GB / 1TB'], ['Display','6.9" Super Retina XDR ProMotion'], ['Chip','A18 Pro'], ['Camera','48MP Triple System (5x Zoom)'], ['Battery','Up to 33 hrs video playback'], ['OS','iOS 18 with Apple Intelligence']]
   },
   {
-    id: 2, name: 'iPhone 16 Pro', brand: 'Apple', cat: 'iPhones', model: 'iPhone 16',
+    id: 2, name: 'iPhone 16 Pro', brand: 'Apple', cat: 'Phones', model: 'iPhone 16',
     cond: 'New', rating: 4.9, reviews: 423, badge: 'New', year: 2024,
     price: 1850000, old: null,
     imgs: [IMG.ip16p_bt, IMG.ip16p_wt],
@@ -58,7 +65,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB / 512GB'], ['Display','6.3" Super Retina XDR ProMotion'], ['Chip','A18 Pro'], ['Camera','48MP Triple (5x Zoom)'], ['Battery','Up to 27 hrs video playback'], ['OS','iOS 18 with Apple Intelligence']]
   },
   {
-    id: 3, name: 'iPhone 16 Plus', brand: 'Apple', cat: 'iPhones', model: 'iPhone 16',
+    id: 3, name: 'iPhone 16 Plus', brand: 'Apple', cat: 'Phones', model: 'iPhone 16',
     cond: 'New', rating: 4.6, reviews: 199, badge: 'Hot', year: 2024,
     price: 1390000, old: 1500000,
     imgs: [IMG.ip16pl, IMG.ip16_pink],
@@ -66,7 +73,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB'], ['Display','6.7" Super Retina XDR OLED'], ['Chip','A18'], ['Camera','48MP Fusion + 12MP Ultra Wide'], ['Battery','Up to 27 hrs video playback'], ['Feature','Camera Control + Action Button']]
   },
   {
-    id: 4, name: 'iPhone 16', brand: 'Apple', cat: 'iPhones', model: 'iPhone 16',
+    id: 4, name: 'iPhone 16', brand: 'Apple', cat: 'Phones', model: 'iPhone 16',
     cond: 'New', rating: 4.7, reviews: 612, badge: 'Hot', year: 2024,
     price: 1180000, old: null,
     imgs: [IMG.ip16_black, IMG.ip16_teal],
@@ -74,7 +81,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB'], ['Display','6.1" Super Retina XDR OLED'], ['Chip','A18'], ['Camera','48MP Fusion + 12MP Ultra Wide'], ['Battery','Up to 22 hrs video playback'], ['Feature','Camera Control + Action Button']]
   },
   {
-    id: 5, name: 'iPhone 15 Pro Max', brand: 'Apple', cat: 'iPhones', model: 'iPhone 15',
+    id: 5, name: 'iPhone 15 Pro Max', brand: 'Apple', cat: 'Phones', model: 'iPhone 15',
     cond: 'New', rating: 4.9, reviews: 789, badge: null, year: 2023,
     price: 1750000, old: 1900000,
     imgs: [IMG.ip15pm_bt, IMG.ip15pm_nt],
@@ -82,7 +89,7 @@ const PRODUCTS = [
     specs: [['Storage','256GB / 512GB / 1TB'], ['Display','6.7" Super Retina XDR ProMotion'], ['Chip','A17 Pro'], ['Camera','48MP Triple (5x Periscope Zoom)'], ['Battery','Up to 29 hrs video playback'], ['Port','USB-C (USB 3)']]
   },
   {
-    id: 6, name: 'iPhone 15 Pro', brand: 'Apple', cat: 'iPhones', model: 'iPhone 15',
+    id: 6, name: 'iPhone 15 Pro', brand: 'Apple', cat: 'Phones', model: 'iPhone 15',
     cond: 'New', rating: 4.8, reviews: 654, badge: null, year: 2023,
     price: 1400000, old: 1550000,
     imgs: [IMG.ip15p_bt, IMG.ip15pm_nt],
@@ -90,7 +97,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB / 512GB'], ['Display','6.1" Super Retina XDR ProMotion'], ['Chip','A17 Pro'], ['Camera','48MP Triple System'], ['Battery','Up to 23 hrs video playback'], ['Port','USB-C (USB 3)']]
   },
   {
-    id: 7, name: 'iPhone 15 Plus', brand: 'Apple', cat: 'iPhones', model: 'iPhone 15',
+    id: 7, name: 'iPhone 15 Plus', brand: 'Apple', cat: 'Phones', model: 'iPhone 15',
     cond: 'New', rating: 4.6, reviews: 301, badge: null, year: 2023,
     price: 1050000, old: null,
     imgs: [IMG.ip15pl, IMG.ip15_pink],
@@ -98,7 +105,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB'], ['Display','6.7" Super Retina XDR OLED'], ['Chip','A16 Bionic'], ['Camera','48MP Main + 12MP Ultra Wide'], ['Battery','Up to 26 hrs video playback'], ['Port','USB-C']]
   },
   {
-    id: 8, name: 'iPhone 15', brand: 'Apple', cat: 'iPhones', model: 'iPhone 15',
+    id: 8, name: 'iPhone 15', brand: 'Apple', cat: 'Phones', model: 'iPhone 15',
     cond: 'New', rating: 4.6, reviews: 812, badge: null, year: 2023,
     price: 880000, old: null,
     imgs: [IMG.ip15_black, IMG.ip15_pink],
@@ -106,7 +113,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB'], ['Display','6.1" Super Retina XDR OLED'], ['Chip','A16 Bionic'], ['Camera','48MP Main + 12MP Ultra Wide'], ['Battery','Up to 20 hrs video playback'], ['Port','USB-C']]
   },
   {
-    id: 9, name: 'iPhone 14 Pro Max', brand: 'Apple', cat: 'iPhones', model: 'iPhone 14',
+    id: 9, name: 'iPhone 14 Pro Max', brand: 'Apple', cat: 'Phones', model: 'iPhone 14',
     cond: 'New', rating: 4.7, reviews: 943, badge: null, year: 2022,
     price: 1050000, old: 1200000,
     imgs: [IMG.ip14pm_dp, IMG.ip14pm_g],
@@ -114,15 +121,15 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB / 512GB / 1TB'], ['Display','6.7" ProMotion Always-On OLED'], ['Chip','A16 Bionic'], ['Camera','48MP Triple System'], ['Battery','Up to 29 hrs video playback'], ['Feature','Always-On Display']]
   },
   {
-    id: 10, name: 'iPhone 14', brand: 'Apple', cat: 'iPhones', model: 'iPhone 14',
+    id: 10, name: 'iPhone 14', brand: 'Apple', cat: 'Phones', model: 'iPhone 14',
     cond: 'Used', rating: 4.5, reviews: 521, badge: null, year: 2022,
     price: 680000, old: null,
     imgs: [IMG.ip14_mid, IMG.ip14pm_dp],
     desc: 'Pre-owned iPhone 14 in excellent condition. Fully tested — all features working perfectly. Crash Detection, Emergency SOS via Satellite, and A15 Bionic chip.',
-    specs: [['Storage','128GB / 256GB'], ['Display','6.1" Super Retina XDR OLED'], ['Chip','A15 Bionic'], ['Camera','12MP Dual System'], ['Battery','Up to 20 hrs video playback'], ['Condition','Used — Excellent (minor cosmetic marks only)']]
+    specs: [['Storage','128GB / 256GB'], ['Display','6.1" Super Retina XDR OLED'], ['Chip','A15 Bionic'], ['Camera','12MP Dual System'], ['Battery','Up to 20 hrs video playback'], ['Condition','Used — Excellent']]
   },
   {
-    id: 11, name: 'iPhone 13 Pro Max', brand: 'Apple', cat: 'iPhones', model: 'iPhone 13',
+    id: 11, name: 'iPhone 13 Pro Max', brand: 'Apple', cat: 'Phones', model: 'iPhone 13',
     cond: 'Used', rating: 4.6, reviews: 402, badge: null, year: 2021,
     price: 580000, old: null,
     imgs: [IMG.ip13_mid, IMG.ip13_red],
@@ -130,7 +137,7 @@ const PRODUCTS = [
     specs: [['Storage','128GB – 1TB'], ['Display','6.7" ProMotion Super Retina XDR'], ['Chip','A15 Bionic'], ['Camera','12MP Triple (3x Zoom)'], ['Battery','Up to 28 hrs video playback'], ['Condition','Used — Good']]
   },
   {
-    id: 12, name: 'iPhone 13', brand: 'Apple', cat: 'iPhones', model: 'iPhone 13',
+    id: 12, name: 'iPhone 13', brand: 'Apple', cat: 'Phones', model: 'iPhone 13',
     cond: 'Used', rating: 4.5, reviews: 634, badge: null, year: 2021,
     price: 420000, old: null,
     imgs: [IMG.ip13_red, IMG.ip13_mid],
@@ -138,12 +145,78 @@ const PRODUCTS = [
     specs: [['Storage','128GB / 256GB / 512GB'], ['Display','6.1" Super Retina XDR OLED'], ['Chip','A15 Bionic'], ['Camera','12MP Dual System'], ['Battery','Up to 19 hrs video playback'], ['Condition','Used — Good']]
   },
   {
-    id: 13, name: 'iPhone SE (3rd Gen)', brand: 'Apple', cat: 'iPhones', model: 'iPhone SE',
+    id: 13, name: 'iPhone SE (3rd Gen)', brand: 'Apple', cat: 'Phones', model: 'iPhone SE',
     cond: 'New', rating: 4.4, reviews: 287, badge: null, year: 2022,
     price: 420000, old: null,
     imgs: [IMG.ipse_red, IMG.ipse_mid],
     desc: 'The most affordable iPhone — with A15 Bionic inside. Compact 4.7" Retina HD display, Touch ID, and 5G capability. Great performance at an unbeatable price.',
     specs: [['Storage','64GB / 128GB / 256GB'], ['Display','4.7" Retina HD'], ['Chip','A15 Bionic'], ['Camera','12MP Wide'], ['Battery','Up to 15 hrs video playback'], ['Feature','Touch ID + 5G']]
+  },
+
+  // ── SAMSUNG ──────────────────────────────────────────────
+  {
+    id: 20, name: 'Samsung Galaxy S25 Ultra', brand: 'Samsung', cat: 'Phones', model: 'Galaxy S25',
+    cond: 'New', rating: 4.9, reviews: 312, badge: 'New', year: 2025,
+    price: 2100000, old: null,
+    imgs: [IMG.s25u],
+    desc: 'The ultimate Samsung. Snapdragon 8 Elite, 200MP camera, built-in S Pen, 6.9" Dynamic AMOLED display. Galaxy AI on every shot.',
+    specs: [['Storage','256GB / 512GB / 1TB'], ['Display','6.9" Dynamic AMOLED 2X 120Hz'], ['Chip','Snapdragon 8 Elite'], ['Camera','200MP Quad System'], ['Battery','5000mAh'], ['Feature','Built-in S Pen + Galaxy AI']]
+  },
+  {
+    id: 21, name: 'Samsung Galaxy S25+', brand: 'Samsung', cat: 'Phones', model: 'Galaxy S25',
+    cond: 'New', rating: 4.8, reviews: 198, badge: 'New', year: 2025,
+    price: 1600000, old: null,
+    imgs: [IMG.s25p],
+    desc: 'Big screen, big battery, pro camera. Galaxy S25+ brings Snapdragon 8 Elite power, 50MP triple camera and Galaxy AI to a stunning 6.7" display.',
+    specs: [['Storage','256GB / 512GB'], ['Display','6.7" Dynamic AMOLED 2X 120Hz'], ['Chip','Snapdragon 8 Elite'], ['Camera','50MP Triple System'], ['Battery','4900mAh'], ['Feature','Galaxy AI']]
+  },
+  {
+    id: 22, name: 'Samsung Galaxy S25', brand: 'Samsung', cat: 'Phones', model: 'Galaxy S25',
+    cond: 'New', rating: 4.7, reviews: 245, badge: 'New', year: 2025,
+    price: 1200000, old: null,
+    imgs: [IMG.s25],
+    desc: 'Compact flagship power. Galaxy S25 packs Snapdragon 8 Elite, 50MP triple camera and Galaxy AI into a sleek 6.2" form factor.',
+    specs: [['Storage','128GB / 256GB'], ['Display','6.2" Dynamic AMOLED 2X 120Hz'], ['Chip','Snapdragon 8 Elite'], ['Camera','50MP Triple System'], ['Battery','4000mAh'], ['Feature','Galaxy AI']]
+  },
+  {
+    id: 23, name: 'Samsung Galaxy Z Fold 6', brand: 'Samsung', cat: 'Phones', model: 'Galaxy Z',
+    cond: 'New', rating: 4.8, reviews: 134, badge: 'Hot', year: 2024,
+    price: 2800000, old: 3000000,
+    imgs: [IMG.zfold6],
+    desc: 'The future of smartphones. Galaxy Z Fold 6 opens into a 7.6" tablet display. Snapdragon 8 Gen 3, S Pen support, and a refined book-style fold.',
+    specs: [['Storage','256GB / 512GB / 1TB'], ['Display','7.6" Main + 6.3" Cover'], ['Chip','Snapdragon 8 Gen 3'], ['Camera','50MP Triple System'], ['Battery','4400mAh'], ['Feature','S Pen Support + Flex Mode']]
+  },
+  {
+    id: 24, name: 'Samsung Galaxy Z Flip 6', brand: 'Samsung', cat: 'Phones', model: 'Galaxy Z',
+    cond: 'New', rating: 4.7, reviews: 167, badge: 'Hot', year: 2024,
+    price: 1450000, old: null,
+    imgs: [IMG.zflip6],
+    desc: 'Flip it. Own it. Galaxy Z Flip 6 with Snapdragon 8 Gen 3, enlarged FlexWindow cover display, and improved 50MP camera. Style meets power.',
+    specs: [['Storage','256GB / 512GB'], ['Display','6.7" Foldable + 3.4" Cover'], ['Chip','Snapdragon 8 Gen 3'], ['Camera','50MP Dual System'], ['Battery','4000mAh'], ['Feature','FlexMode + Flex Window']]
+  },
+  {
+    id: 25, name: 'Samsung Galaxy A55 5G', brand: 'Samsung', cat: 'Phones', model: 'Galaxy A',
+    cond: 'New', rating: 4.5, reviews: 289, badge: null, year: 2024,
+    price: 480000, old: null,
+    imgs: [IMG.a55],
+    desc: 'Premium mid-range excellence. Galaxy A55 5G with 50MP OIS camera, 6.6" Super AMOLED display, and IP67 water resistance. Outstanding value.',
+    specs: [['Storage','128GB / 256GB'], ['Display','6.6" Super AMOLED 120Hz'], ['Chip','Exynos 1480'], ['Camera','50MP Triple with OIS'], ['Battery','5000mAh'], ['Feature','IP67 + 5G']]
+  },
+  {
+    id: 26, name: 'Samsung Galaxy A35 5G', brand: 'Samsung', cat: 'Phones', model: 'Galaxy A',
+    cond: 'New', rating: 4.4, reviews: 312, badge: null, year: 2024,
+    price: 320000, old: null,
+    imgs: [IMG.a35],
+    desc: 'Great camera, great price. Galaxy A35 5G delivers 50MP OIS camera, 6.6" Super AMOLED display and 5000mAh battery at an accessible price point.',
+    specs: [['Storage','128GB / 256GB'], ['Display','6.6" Super AMOLED 120Hz'], ['Chip','Exynos 1380'], ['Camera','50MP Triple with OIS'], ['Battery','5000mAh'], ['Feature','IP67 + 5G']]
+  },
+  {
+    id: 27, name: 'Samsung Galaxy A16 5G', brand: 'Samsung', cat: 'Phones', model: 'Galaxy A',
+    cond: 'New', rating: 4.3, reviews: 198, badge: null, year: 2024,
+    price: 180000, old: null,
+    imgs: [IMG.a16],
+    desc: 'Affordable 5G done right. Galaxy A16 5G with 50MP camera, 6.7" display and 5000mAh battery. The best entry-level Samsung you can buy.',
+    specs: [['Storage','128GB / 256GB'], ['Display','6.7" Super AMOLED 90Hz'], ['Chip','MediaTek Dimensity 6300'], ['Camera','50MP Triple'], ['Battery','5000mAh'], ['Feature','5G + 6 years OS updates']]
   },
 
   // ── LAPTOPS ──────────────────────────────────────────────
@@ -204,11 +277,11 @@ const PRODUCTS = [
 ];
 
 const CATEGORIES = [
-  { name: 'iPhones',     icon: '📱' },
+  { name: 'Phones',      icon: '📱' },
   { name: 'Laptops',     icon: '💻' },
   { name: 'Gaming',      icon: '🎮' },
   { name: 'Audio',       icon: '🎧' },
   { name: 'Accessories', icon: '⌚' },
 ];
 
-const IPHONE_MODELS = ['iPhone 16', 'iPhone 15', 'iPhone 14', 'iPhone 13', 'iPhone SE'];
+const IPHONE_MODELS = ['iPhone 16', 'iPhone 15', 'iPhone 14', 'iPhone 13', 'iPhone SE', 'Galaxy S25', 'Galaxy Z', 'Galaxy A'];

@@ -30,9 +30,12 @@ function goPage(page) {
   curPage = page;
   pushHistory(page);
 
-  // Show back arrow on all pages except home
   const mobBack = $('mobBack');
   if (mobBack) mobBack.style.display = page === 'home' ? 'none' : 'block';
+
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const activeLink = document.querySelector(`.nav-links a[onclick*="'${page}'"]`);
+  if (activeLink) activeLink.classList.add('active');
 
   ['home', 'shop', 'about', 'contact'].forEach(p => {
     const l = $('nl-' + p);
@@ -42,6 +45,8 @@ function goPage(page) {
   window.scrollTo(0, 0);
   if (page === 'shop') renderShop();
 }
+
+
 
 function goBack() { goPage(prevPage === 'detail' ? 'shop' : prevPage); }
 function goShopCat(cat) { activeCat = cat; goPage('shop'); }
@@ -166,8 +171,8 @@ function renderHome() {
     </div>`).join('');
 
   // Featured — 8 iPhones first, then fill with others
-  const iPhones = PRODUCTS.filter(p => p.cat === 'iPhones').slice(0, 6);
-  const others = PRODUCTS.filter(p => p.cat !== 'iPhones').slice(0, 2);
+  const iPhones = PRODUCTS.filter(p => p.cat === 'Phones').slice(0, 6);
+  const others = PRODUCTS.filter(p => p.cat !== 'Phones').slice(0, 2);
   $('featuredGrid').innerHTML = [...iPhones, ...others].map(prodCard).join('');
 }
 
@@ -316,7 +321,7 @@ function openDetail(id) {
 
       <div class="d-actions">
         <button class="d-action-btn wa" onclick="waDirect(${p.id})">💬 WhatsApp</button>
-        <button class="d-action-btn ig" onclick="window.open('https://instagram.com/henrixhub','_blank')">📸 Instagram</button>
+        <button class="d-action-btn ig" onclick="window.open('https://instagram.com/henrixx_hub','_blank')">📸 Instagram</button>
         <button class="d-action-btn tk" onclick="window.open('https://tiktok.com/@henrixhub','_blank')">🎵 TikTok</button>
       </div>
       <button class="d-cart-btn" onclick="addToCart(${p.id})">+ Add to Cart</button>
@@ -422,3 +427,4 @@ window.addEventListener('popstate', e => {
 
 // Set initial history state
 history.replaceState({ page: 'home' }, '', '#home');
+
