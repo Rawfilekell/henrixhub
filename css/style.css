@@ -31,7 +31,7 @@ body {
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font-family: 'Inter', sans-serif; }
 input, textarea, select { font-family: 'Inter', sans-serif; }
-img { max-width: 100%; }
+img { max-height: 100%;}
 
 
 .page          { display: none; }
