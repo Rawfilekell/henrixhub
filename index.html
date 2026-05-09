@@ -9,6 +9,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Anton:wght@300;400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -16,7 +17,8 @@
     <nav>
 
       <button class="mob-back" id="mobBack" onclick="goBack()" style="display:none">←</button>
-      <div class="logo" onclick="goPage('home'); if($('mobNav').classList.contains('open')) toggleMob()">Henrix<span>Hub</span></div>
+      <div class="logo" onclick="goPage('home'); if($('mobNav').classList.contains('open')) toggleMob()">
+        Henrix<span>Hub</span></div>
       <ul class="nav-links">
         <li><a onclick="goPage('home')" class="active">Home</a></li>
         <li><a onclick="goPage('shop')">Shop</a></li>
@@ -366,21 +368,26 @@
             <div class="cinfo-ic">📍</div>
             <div>
               <div class="cinfo-lbl">Address</div>
-              <div class="cinfo-val">3,9 Olukolesho Street, Off Simbiat Abiola Way, Ikeja, Lagos, Nigeria</div>
+              <div class="cinfo-val"
+                onclick="window.open('https://maps.google.com/?q=3+Olukolesho+Street+Ikeja+Lagos+Nigeria','_blank')"
+                style="cursor:pointer">3,9 Olukolesho Street, Off Simbiat Abiola Way, Ikeja, Lagos, Nigeria</div>
             </div>
           </div>
           <div class="cinfo">
             <div class="cinfo-ic">📞</div>
             <div>
               <div class="cinfo-lbl">Phone</div>
-              <div class="cinfo-val">+234 818 272 7991</div>
+              <div class="cinfo-val" onclick="window.open('tel:+2348182727991')" style="cursor:pointer">+234 818 272
+                7991</div>
             </div>
           </div>
           <div class="cinfo">
-            <div class="cinfo-ic">✉️</div>
+            <div class="cinfo-ic"><img src="./assets/Gmail_icon_(2020).svg.png"
+                style="width:22px;height:22px;object-fit:contain"></div>
             <div>
               <div class="cinfo-lbl">Email</div>
-              <div class="cinfo-val">henrixhub@gmail.com</div>
+              <div class="cinfo-val" onclick="window.open('mailto:henrixhub@gmail.com','_blank')"
+                style="cursor:pointer;color:var(--red)">henrixhub@gmail.com</div>
             </div>
           </div>
           <div class="cinfo">
@@ -393,11 +400,12 @@
 
           <div class="soc-btns">
             <button class="soc-btn wa"
-              onclick="window.open('https://wa.me/+2348182727991?text=Hi HenrixHub!','_blank')">💬 WhatsApp</button>
-            <button class="soc-btn ig" onclick="window.open('https://instagram.com/henrixx_hub','_blank')">📸
-              Instagram</button>
-            <button class="soc-btn tk" onclick="window.open('https://tiktok.com/@henrixhub','_blank')">🎵
-              TikTok</button>
+              onclick="window.open('https://wa.me/+2348182727991?text=Hi HenrixHub!','_blank')"><i
+                class="fab fa-whatsapp"></i>WhatsApp</button>
+            <button class="soc-btn ig" onclick="window.open('https://instagram.com/henrixx_hub','_blank')"><i
+                class="fab fa-instagram"></i> Instagram</button>
+            <button class="soc-btn tk" onclick="window.open('https://tiktok.com/@henrixhub','_blank')"><i
+                class="fab fa-tiktok"></i> TikTok</button>
           </div>
         </div>
 
@@ -437,10 +445,12 @@
         <p class="ft-desc">We fulfil your mobile dreams. Authentic iPhones and premium tech, verified, sourced
           directly, delivered worldwide.</p>
         <div class="ft-socs">
-          <button class="ft-soc wa" onclick="window.open('https://wa.me/+2348182727991','_blank')">💬 WhatsApp</button>
-          <button class="ft-soc ig" onclick="window.open('https://instagram.com/henrixx_hub','_blank')">📸
-            Instagram</button>
-          <button class="ft-soc tk" onclick="window.open('https://tiktok.com/@henrixhub','_blank')">🎵 TikTok</button>
+          <button class="ft-soc wa" onclick="window.open('https://wa.me/+2348182727991','_blank')"><i
+              class="fab fa-whatsapp"></i> WhatsApp</button>
+          <button class="ft-soc ig" onclick="window.open('https://instagram.com/henrixx_hub','_blank')"><i
+              class="fab fa-instagram"></i> Instagram</button>
+          <button class="ft-soc tk" onclick="window.open('https://tiktok.com/@henrixhub','_blank')"><i
+              class="fab fa-tiktok"></i> TikTok</button>
         </div>
       </div>
 
@@ -468,10 +478,21 @@
 
       <div class="ft-col">
         <h4>Contact</h4>
-        <div class="fci"><span class="fci-ic">📍</span>3,9 Olukolesho Street, Off Simbiat Abiola Way, Ikeja, Lagos,
-          Nigeria</div>
-        <div class="fci"><span class="fci-ic">📞</span>+234 818 272 7991</div>
-        <div class="fci"><span class="fci-ic">✉️</span>henrixhub@gmail.com</div>
+        <div class="fci"
+          onclick="window.open('https://maps.google.com/?q=3+Olukolesho+Street+Ikeja+Lagos+Nigeria','_blank')"
+          style="cursor:pointer"><span class="fci-ic">📍</span>3,9 Olukolesho Street, Off Simbiat Abiola Way, Ikeja,
+          Lagos, Nigeria</div>
+        <div class="fci"><span class="fci-ic">📞</span>
+          <div class="cinfo-val" onclick="window.open('tel:+2348182727991')" style="cursor:pointer">+234 818 272 7991
+          </div>
+        </div>
+        <div class="fci"><span class="fci-ic">
+            <span class="fci-ic"><img src="./assets/Gmail_icon_(2020).svg.png"
+                style="width:16px;height:16px;object-fit:contain"></span>
+          </span>
+          <div class="cinfo-val" onclick="window.open('mailto:henrixhub@gmail.com','_blank')" style="cursor:pointer">
+            henrixhub@gmail.com</div>
+        </div>
       </div>
 
     </div>
@@ -514,7 +535,7 @@
         <span>Total</span>
         <strong id="cartTotal">₦0</strong>
       </div>
-      <button class="wa-order" onclick="orderWA()">💬 Order via WhatsApp</button>
+      <button class="wa-order" onclick="orderWA()"><i class="fab fa-whatsapp"></i>Order via WhatsApp</button>
       <button class="clear-c" onclick="clearCart()">Clear Cart</button>
     </div>
   </div>

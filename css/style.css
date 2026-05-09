@@ -1101,7 +1101,7 @@ nav {
 .cinfo { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: 1.2rem; }
 .cinfo-ic  { width: 42px; height: 42px; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; border-radius: 4px; }
 .cinfo-lbl { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #bbb; margin-bottom: .12rem; }
-.cinfo-val { font-size: .86rem; color: var(--dark); font-weight: 500; }
+.cinfo-val { font-size: .86rem; color: var(--mid); font-weight: 500; }
 
 .soc-btns { display: flex; gap: .7rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .soc-btn  { display: inline-flex; align-items: center; gap: .5rem; padding: .72rem 1.2rem; border: none; font-weight: 700; font-size: .8rem; cursor: pointer; border-radius: 3px; transition: opacity .2s; }
@@ -1166,7 +1166,7 @@ footer {
 .ft-links span:hover { color: var(--red); }
 
 .fci    { display: flex; gap: .55rem; align-items: flex-start; margin-bottom: .65rem; color: var(--mid); font-size: .8rem; line-height: 1.5; }
-.fci-ic { color: var(--red); flex-shrink: 0; }
+.fci-ic { color: var(--mid); flex-shrink: 0; }
 
 
 .toast {
