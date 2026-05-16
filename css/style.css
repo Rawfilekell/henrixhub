@@ -67,6 +67,11 @@ nav {
 }
 .logo span { color: var(--red); }
 
+.logo img{
+  height: 50px;
+  width: 290px;
+}
+
 .nav-links {
   display: flex;
   gap: 1.8rem;
@@ -1190,6 +1195,21 @@ footer {
 
 
 @media (max-width: 960px) {
+
+  @media (max-width: 960px) {
+
+  .logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .logo img{
+    width: 210px;
+    height: auto;
+  }
+
+}
   .mob-back { display: block; }
   .nav-links { display: none; }
   .mob-btn   { display: block; }
