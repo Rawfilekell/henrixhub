@@ -170,10 +170,24 @@ function renderHome() {
       <span class="cat-nm">${c.name}</span>
     </div>`).join('');
 
-  // Featured — 8 iPhones first, then fill with others
-  const iPhones = PRODUCTS.filter(p => p.cat === 'Phones').slice(0, 6);
-  const others = PRODUCTS.filter(p => p.cat !== 'Phones').slice(0, 2);
-  $('featuredGrid').innerHTML = [...iPhones, ...others].map(prodCard).join('');
+  // Featured — one representative pick from each iPhone generation + non-phones
+  const generations = ['iPhone 17', 'iPhone 16', 'iPhone 15', 'iPhone 14', 'iPhone 13', 'iPhone 12'];
+  const genPicks = generations
+    .map(gen => PRODUCTS.find(p => p.model === gen && p.cat === 'Phones'))
+    .filter(Boolean)
+    .slice(0, 4);
+
+  const nonPhones = PRODUCTS.filter(p => p.cat !== 'Phones').slice(0, 4);
+
+  // interleave: phone, non-phone, phone, non-phone...
+  const featured = [];
+  const maxLen = Math.max(genPicks.length, nonPhones.length);
+  for (let i = 0; i < maxLen; i++) {
+    if (genPicks[i]) featured.push(genPicks[i]);
+    if (nonPhones[i]) featured.push(nonPhones[i]);
+  }
+
+  $('featuredGrid').innerHTML = featured.slice(0, 8).map(prodCard).join('');
 }
 
 /* ── SHOP ── */
