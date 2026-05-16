@@ -1200,7 +1200,6 @@ footer {
 
   nav{
     align-items: center;
-    padding: 0 2%;
   }
 
   .logo img{
@@ -1210,7 +1209,7 @@ footer {
 
   .nav-right{
     margin-left: auto;
-  
+    margin-right: 1rem;
   }
 
  
