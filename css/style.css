@@ -68,8 +68,8 @@ nav {
 .logo span { color: var(--red); }
 
 .logo img{
-  height: 50px;
-  width: 290px;
+  height: 48px;
+  width: 200px;
 }
 
 .nav-links {
@@ -1196,20 +1196,24 @@ footer {
 
 @media (max-width: 960px) {
 
-  @media (max-width: 960px) {
+ 
 
-  .logo {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+  nav{
+    align-items: center;
+    padding: 0 2%;
   }
 
   .logo img{
-    width: 210px;
+    width: 170px;
     height: auto;
   }
 
-}
+  .nav-right{
+    margin-left: auto;
+  
+  }
+
+ 
   .mob-back { display: block; }
   .nav-links { display: none; }
   .mob-btn   { display: block; }
