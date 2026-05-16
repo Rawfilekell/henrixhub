@@ -1195,26 +1195,48 @@ footer {
 
 @media (max-width: 960px) {
 
- 
-
   nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 68px;
+  }
+
+  .logo{
+    display: flex;
     align-items: center;
   }
 
   .logo img{
     width: 170px;
     height: auto;
+    display: block;
   }
 
   .nav-right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-left: auto;
-    margin-right: 0rem;
   }
 
- 
+  .cart-btn{
+    font-size: 1.5rem;
+    color: #000;
+  }
+
+  .mob-btn{
+    display: block;
+    font-size: 1.9rem;
+    color: #000;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+  }
+
   .mob-back { display: block; }
   .nav-links { display: none; }
-  .mob-btn   { display: block; }
 
   .hero-inner        { grid-template-columns: 1fr 1.5fr; }
   .prod-grid         { grid-template-columns: repeat(2, 1fr); }
@@ -1241,6 +1263,8 @@ footer {
   .hero-stats      { gap: 1.2rem; margin-top: 1.5rem; }
   .sn              { font-size: 1.3rem; }
 }
+
+ 
 
 @media (max-width: 600px) {
   .hero-cta   { justify-content: center; }
