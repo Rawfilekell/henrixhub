@@ -20,7 +20,6 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; color: var(--text); overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
-button { cursor: pointer; font-family: 'Inter', sans-serif; }
 input, textarea, select { font-family: 'Inter', sans-serif; }
 img { max-width: 100%; display: block; }
 
@@ -213,8 +212,7 @@ nav {
   box-shadow: 0 4px 18px rgba(0,0,0,.18);
   transition: background .2s, color .2s, transform .18s;
 }
-.btn-shop:hover { background: var(--red); color: #fff; transform: translateY(-2px); }
-.btn-link:hover { background: var(--dark); color: #fff; transform: translateY(-2px); }
+
 
 .hero-stats {
   display: flex;
@@ -259,7 +257,7 @@ nav {
   flex-wrap: wrap;
   gap: 1rem;
 }
-.section-hd h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--dark); letter-spacing: -.5px; }
+.section-hd h2 {font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--dark); letter-spacing: -.5px; }
 .section-hd h2 span { color: var(--red); }
 .sec-line { width: 40px; height: 3px; background: var(--red); margin-top: 5px; }
 
@@ -610,7 +608,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); p
 
 @media (max-width: 600px) {
   .hero {
-    min-height: calc(100svh - 96px);
+    min-height: calc(100svh - 270px);
     padding: 0;
     background-position: center center;
     justify-content: center;
