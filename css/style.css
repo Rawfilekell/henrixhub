@@ -608,7 +608,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); p
 
 @media (max-width: 600px) {
   .hero {
-    min-height: calc(100svh - 200px);
+    min-height: calc(100svh - 112px);
     padding: 0;
     background-position: center center;
     justify-content: center;
